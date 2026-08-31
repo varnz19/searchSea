@@ -214,55 +214,59 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
       </div>
 
-      {/* Signature Element: KPI Summary Strip (The ONLY element allowed elevation/border) */}
-      <div className="kpi-strip p-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div>
-          <div className="font-mono text-2xl font-semibold text-ink tabular-nums tracking-tight">
+      {/* Signature Element: KPI Summary Strip */}
+      <div className="rounded-2xl bg-white border border-slate-200/90 shadow-sm p-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div className="pl-3 border-l-2 border-indigo-600">
+          <div className="font-mono text-3xl font-bold bg-gradient-to-r from-slate-900 to-indigo-950 bg-clip-text text-transparent tabular-nums tracking-tight">
             {analysisData.totalResponses?.toLocaleString() || 0}
           </div>
-          <div className="text-[11px] font-sans text-ink-muted uppercase tracking-wider mt-0.5">
+          <div className="text-xs font-sans text-slate-500 font-medium uppercase tracking-wider mt-0.5">
             Total Responses
           </div>
+          <div className="text-[11px] font-mono text-indigo-600 font-medium mt-0.5">Ingested Dataset</div>
         </div>
 
-        <div>
-          <div className="font-mono text-2xl font-semibold text-ink tabular-nums tracking-tight">
+        <div className="pl-3 border-l-2 border-cyan-600">
+          <div className="font-mono text-3xl font-bold bg-gradient-to-r from-cyan-700 to-blue-800 bg-clip-text text-transparent tabular-nums tracking-tight">
             100%
           </div>
-          <div className="text-[11px] font-sans text-ink-muted uppercase tracking-wider mt-0.5">
+          <div className="text-xs font-sans text-slate-500 font-medium uppercase tracking-wider mt-0.5">
             Completion Rate
           </div>
+          <div className="text-[11px] font-mono text-cyan-600 font-medium mt-0.5">Zero Drop-off</div>
         </div>
 
-        <div>
-          <div className="font-mono text-2xl font-semibold text-accent-significant tabular-nums tracking-tight">
+        <div className="pl-3 border-l-2 border-emerald-600">
+          <div className="font-mono text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent tabular-nums tracking-tight">
             {analysisData.cleanRate || 0}%
           </div>
-          <div className="text-[11px] font-sans text-ink-muted uppercase tracking-wider mt-0.5">
+          <div className="text-xs font-sans text-slate-500 font-medium uppercase tracking-wider mt-0.5">
             Clean Rate
           </div>
+          <div className="text-[11px] font-mono text-emerald-600 font-medium mt-0.5">{analysisData.cleanResponses} Clean Sample</div>
         </div>
 
-        <div>
-          <div className={`font-mono text-2xl font-semibold tabular-nums tracking-tight ${
-            flaggedTotal > 0 ? 'text-accent-flagged' : 'text-ink'
+        <div className="pl-3 border-l-2 border-amber-500">
+          <div className={`font-mono text-3xl font-bold tabular-nums tracking-tight ${
+            flaggedTotal > 0 ? 'text-amber-600' : 'text-slate-900'
           }`}>
             {flaggedTotal.toLocaleString()}
           </div>
-          <div className="text-[11px] font-sans text-ink-muted uppercase tracking-wider mt-0.5">
+          <div className="text-xs font-sans text-slate-500 font-medium uppercase tracking-wider mt-0.5">
             Flagged Anomalies
           </div>
+          <div className="text-[11px] font-mono text-amber-600 font-medium mt-0.5">Speeders + Straight-liners</div>
         </div>
       </div>
 
       {/* Main Tab Navigation */}
-      <div className="flex border-b border-hairline space-x-6 overflow-x-auto text-xs font-mono">
+      <div className="flex border-b border-slate-200 space-x-2 overflow-x-auto text-xs font-mono pb-1">
         <button
           onClick={() => setActiveTab('overview')}
-          className={`py-2.5 border-b-2 whitespace-nowrap transition-colors ${
+          className={`py-2 px-3.5 rounded-lg whitespace-nowrap font-medium transition-all ${
             activeTab === 'overview'
-              ? 'border-accent-action text-ink font-semibold'
-              : 'border-transparent text-ink-muted hover:text-ink'
+              ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           1. Overview
@@ -270,10 +274,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <button
           onClick={() => setActiveTab('provenance')}
-          className={`py-2.5 border-b-2 whitespace-nowrap transition-colors ${
+          className={`py-2 px-3.5 rounded-lg whitespace-nowrap font-medium transition-all ${
             activeTab === 'provenance'
-              ? 'border-accent-action text-ink font-semibold'
-              : 'border-transparent text-ink-muted hover:text-ink'
+              ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           2. Data Provenance ({flaggedTotal})
@@ -281,10 +285,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <button
           onClick={() => setActiveTab('hypotheses')}
-          className={`py-2.5 border-b-2 whitespace-nowrap transition-colors ${
+          className={`py-2 px-3.5 rounded-lg whitespace-nowrap font-medium transition-all ${
             activeTab === 'hypotheses'
-              ? 'border-accent-action text-ink font-semibold'
-              : 'border-transparent text-ink-muted hover:text-ink'
+              ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           3. Hypothesis Testing ({analysisData.hypothesisTesting?.tests?.length || 0})
@@ -292,10 +296,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <button
           onClick={() => setActiveTab('clustering')}
-          className={`py-2.5 border-b-2 whitespace-nowrap transition-colors ${
+          className={`py-2 px-3.5 rounded-lg whitespace-nowrap font-medium transition-all ${
             activeTab === 'clustering'
-              ? 'border-accent-action text-ink font-semibold'
-              : 'border-transparent text-ink-muted hover:text-ink'
+              ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           4. Segmentation (K={analysisData.clustering?.n_clusters || 3})
@@ -303,10 +307,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <button
           onClick={() => setActiveTab('nlp')}
-          className={`py-2.5 border-b-2 whitespace-nowrap transition-colors ${
+          className={`py-2 px-3.5 rounded-lg whitespace-nowrap font-medium transition-all ${
             activeTab === 'nlp'
-              ? 'border-accent-action text-ink font-semibold'
-              : 'border-transparent text-ink-muted hover:text-ink'
+              ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           5. NLP Themes ({analysisData.nlpThemes?.themes?.length || 0})
@@ -314,10 +318,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <button
           onClick={() => setActiveTab('report')}
-          className={`py-2.5 border-b-2 whitespace-nowrap transition-colors ${
+          className={`py-2 px-3.5 rounded-lg whitespace-nowrap font-medium transition-all ${
             activeTab === 'report'
-              ? 'border-accent-action text-ink font-semibold'
-              : 'border-transparent text-ink-muted hover:text-ink'
+              ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           6. Executive Report
@@ -325,10 +329,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <button
           onClick={() => setActiveTab('powerbi')}
-          className={`py-2.5 border-b-2 whitespace-nowrap transition-colors ${
+          className={`py-2 px-3.5 rounded-lg whitespace-nowrap font-medium transition-all ${
             activeTab === 'powerbi'
-              ? 'border-accent-action text-ink font-semibold'
-              : 'border-transparent text-ink-muted hover:text-ink'
+              ? 'bg-gradient-to-r from-amber-500 to-indigo-600 text-white shadow-sm font-semibold'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
           }`}
         >
           7. Power BI Executive
