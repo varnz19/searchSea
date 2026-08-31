@@ -1,0 +1,12 @@
+{
+  "name": "researchos-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ResearchOS: Autonomous End-to-End Quantitative Research Platform",
+  "scripts": {
+    "start:ml": "cd backend-ml && .\\venv\\Scripts\\uvicorn main:app --host 127.0.0.1 --port 8000 --reload",
+    "start:node": "cd backend-node && npm run dev",
+    "start:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build"
+  }
+}
