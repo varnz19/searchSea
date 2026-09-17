@@ -4,9 +4,10 @@
   "private": true,
   "description": "ResearchOS: Autonomous End-to-End Quantitative Research Platform",
   "scripts": {
-    "start:ml": "cd backend-ml && .\\venv\\Scripts\\uvicorn main:app --host 127.0.0.1 --port 8000 --reload",
+    "start:ml": "cd backend-ml && (.venv/bin/uvicorn main:app --host 127.0.0.1 --port 8000 --reload || python3 -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload)",
     "start:node": "cd backend-node && npm run dev",
     "start:frontend": "cd frontend && npm run dev",
+    "dev": "npm run start:ml & npm run start:node & npm run start:frontend",
     "build": "cd frontend && npm run build"
   }
 }

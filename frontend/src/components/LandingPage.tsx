@@ -151,18 +151,18 @@ export const LandingPage: React.FC<LandingPageProps> = () => {
 
   return (
     <div className="min-h-screen bg-[#FAFBFD] text-slate-950 flex flex-col font-sans selection:bg-slate-900 selection:text-white">
-      {/* Top Professional Sticky Navigation */}
+      {/* Top Professional Sticky Navigation — Larger & More Prominent */}
       <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-serif font-bold text-base shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <div className="flex items-center space-x-3.5">
+            <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-white font-serif font-bold text-lg shadow-sm">
               S
             </div>
             <div className="flex items-baseline space-x-2.5">
-              <span className="font-serif font-bold text-xl tracking-tight text-slate-950">
+              <span className="font-serif font-bold text-2xl tracking-tight text-slate-950">
                 SearchSea
               </span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold border-l border-slate-200 pl-2.5">
+              <span className="hidden sm:inline text-[11px] font-mono uppercase tracking-wider text-slate-500 font-semibold border-l border-slate-200 pl-2.5">
                 Empirical Research Engine
               </span>
             </div>
@@ -173,88 +173,205 @@ export const LandingPage: React.FC<LandingPageProps> = () => {
               href="http://localhost:5555"
               target="_blank"
               rel="noreferrer"
-              className="hidden md:inline-flex items-center space-x-1.5 text-xs font-mono text-slate-600 hover:text-slate-950 px-3 py-1.5 rounded border border-slate-200 hover:border-slate-400 bg-white transition-all"
+              className="hidden lg:inline-flex items-center space-x-1.5 text-sm font-mono text-slate-600 hover:text-slate-950 px-3.5 py-2 rounded-lg border border-slate-200 hover:border-slate-400 bg-white transition-all"
               title="Open Prisma Studio Database Tables Browser"
             >
-              <Database className="w-3.5 h-3.5 text-slate-700" />
+              <Database className="w-4 h-4 text-slate-700" />
               <span>DB Studio</span>
             </a>
 
             <button
               onClick={() => setIsMethodologyOpen(true)}
-              className="inline-flex items-center space-x-1.5 text-xs font-sans font-medium px-3 py-1.5 rounded border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition-all"
+              className="hidden sm:inline-flex items-center space-x-1.5 text-sm font-sans font-medium px-3.5 py-2 rounded-lg border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition-all"
             >
-              <BookOpen className="w-3.5 h-3.5 text-slate-500" />
-              <span className="hidden sm:inline">Methodology & Defense</span>
+              <BookOpen className="w-4 h-4 text-slate-500" />
+              <span>Methodology</span>
             </button>
 
             <button
               onClick={() => scrollToAuth('login')}
-              className="inline-flex items-center space-x-1.5 text-xs font-sans font-medium px-3.5 py-1.5 rounded border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 transition-all shadow-subtle"
+              className="inline-flex items-center space-x-1.5 text-sm font-sans font-semibold px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white shadow-sm transition-all"
             >
-              <LogIn className="w-3.5 h-3.5 text-slate-600" />
-              <span>Sign In</span>
-            </button>
-
-            <button
-              onClick={() => scrollToAuth('signup')}
-              className="inline-flex items-center space-x-1.5 text-xs font-sans font-semibold px-4 py-2 rounded bg-slate-900 hover:bg-slate-800 text-white shadow-sm transition-all"
-            >
-              <UserPlus className="w-3.5 h-3.5 text-slate-300" />
-              <span>Get Started</span>
+              <LogIn className="w-4 h-4 text-slate-300" />
+              <span>Access Platform</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
             </button>
           </div>
         </div>
       </header>
 
       {/* Main Scrollable Content */}
-      <main className="flex-1 w-full space-y-20 sm:space-y-28 py-12 sm:py-20">
+      <main className="flex-1 w-full space-y-20 sm:space-y-28 py-14 sm:py-20">
         
-        {/* HERO SECTION: PRESTIGIOUS & AUTHORITATIVE */}
+        {/* HERO SECTION: TWO-COLUMN WITH INLINE AUTH */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded bg-slate-100 border border-slate-200 text-[11px] font-mono font-medium text-slate-800">
-              <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-              <span>Automated Quantitative Inference & Provenance Architecture</span>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+            {/* Left Column: Headline & Description (3/5) */}
+            <div className="lg:col-span-3 space-y-6">
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-[11px] font-mono font-medium text-slate-800">
+                <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                <span>Automated Quantitative Inference & Provenance Architecture</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-serif font-bold text-slate-950 tracking-tight leading-[1.12]">
+                Automated statistical inference, data provenance, and persona discovery for empirical research.
+              </h1>
+
+              <p className="text-base sm:text-lg text-slate-600 font-sans leading-relaxed max-w-2xl">
+                SearchSea eliminates manual statistical wrangling. It synthesizes balanced questionnaires, isolates response anomalies into an immutable audit trail, evaluates parametric vs non-parametric hypotheses with Bonferroni correction, clusters unsupervised 2D PCA personas, and extracts qualitative themes.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <button
+                  onClick={() => setIsMethodologyOpen(true)}
+                  className="inline-flex items-center space-x-2 px-5 py-3 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-900 text-sm font-sans font-medium transition-all shadow-subtle"
+                >
+                  <BookOpen className="w-4 h-4 text-slate-500" />
+                  <span>Mathematical Rationale</span>
+                </button>
+
+                <button
+                  onClick={scrollToArchitecture}
+                  className="inline-flex items-center space-x-2 px-5 py-3 rounded-lg border border-transparent hover:border-slate-200 text-slate-600 hover:text-slate-900 text-sm font-sans font-medium transition-all"
+                >
+                  <Layers className="w-4 h-4 text-slate-400" />
+                  <span>View Architecture</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-950 tracking-tight leading-[1.12]">
-              Automated statistical inference, data provenance, and persona discovery for empirical research.
-            </h1>
+            {/* Right Column: Compact Auth Card (2/5) — Always Visible */}
+            <div className="lg:col-span-2">
+              <div id="auth-section" className="rounded-xl border border-slate-300 bg-white p-5 sm:p-6 shadow-card space-y-5">
+                <div className="space-y-1">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold">
+                    Investigator Access
+                  </div>
+                  <h2 className="text-lg font-serif font-bold text-slate-950">
+                    {authMode === 'signup' ? 'Create Your Account' : 'Welcome Back'}
+                  </h2>
+                  <p className="text-xs text-slate-500 font-sans">
+                    {authMode === 'signup' ? 'Set up your research workspace in seconds.' : 'Sign in to continue your research.'}
+                  </p>
+                </div>
 
-            <p className="text-base sm:text-lg text-slate-600 font-sans leading-relaxed max-w-3xl">
-              SearchSea eliminates manual statistical wrangling. It synthesizes balanced questionnaires, isolates response anomalies into an immutable audit trail, evaluates parametric vs non-parametric hypotheses with Bonferroni correction, clusters unsupervised 2D PCA personas, and extracts qualitative themes.
-            </p>
+                {/* Auth Mode Toggle */}
+                <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg text-xs font-mono">
+                  <button
+                    type="button"
+                    onClick={() => { setAuthMode('login'); setError(null); }}
+                    className={`flex-1 px-3 py-1.5 rounded-md font-medium transition-all text-center ${
+                      authMode === 'login'
+                        ? 'bg-white text-slate-950 shadow-subtle font-semibold'
+                        : 'text-slate-600 hover:text-slate-950'
+                    }`}
+                  >
+                    Sign In
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { setAuthMode('signup'); setError(null); }}
+                    className={`flex-1 px-3 py-1.5 rounded-md font-medium transition-all text-center ${
+                      authMode === 'signup'
+                        ? 'bg-white text-slate-950 shadow-subtle font-semibold'
+                        : 'text-slate-600 hover:text-slate-950'
+                    }`}
+                  >
+                    Register
+                  </button>
+                </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button
-                onClick={() => scrollToAuth('signup')}
-                className="inline-flex items-center space-x-2 px-5 py-3 rounded bg-slate-900 hover:bg-slate-800 text-white text-xs font-sans font-semibold shadow-sm transition-all"
-              >
-                <span>Create Investigator Account</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+                {error && (
+                  <div className="p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start space-x-2">
+                    <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                    <span>{error}</span>
+                  </div>
+                )}
 
-              <button
-                onClick={() => scrollToAuth('login')}
-                className="inline-flex items-center space-x-2 px-4 py-3 rounded border border-slate-300 bg-white hover:bg-slate-50 text-slate-900 text-xs font-sans font-medium transition-all"
-              >
-                <LogIn className="w-3.5 h-3.5 text-slate-600" />
-                <span>Sign In to Workspace</span>
-              </button>
+                <form onSubmit={handleAuthSubmit} className="space-y-3">
+                  {authMode === 'signup' && (
+                    <div>
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Dr. Eleanor Vance"
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:border-slate-900 text-sm font-sans text-slate-900 outline-none transition-all"
+                      />
+                    </div>
+                  )}
 
-              <button
-                onClick={() => setIsMethodologyOpen(true)}
-                className="inline-flex items-center space-x-2 px-4 py-3 rounded border border-transparent hover:border-slate-200 text-slate-600 hover:text-slate-900 text-xs font-sans font-medium transition-all"
-              >
-                <BookOpen className="w-3.5 h-3.5 text-slate-500" />
-                <span>Mathematical Rationale</span>
-              </button>
+                  <div>
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="researcher@institution.edu"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:border-slate-900 text-sm font-sans text-slate-900 outline-none transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
+                      Password {authMode === 'signup' && <span className="normal-case text-slate-400">(min. 8 chars)</span>}
+                    </label>
+                    <input
+                      type="password"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="••••••••"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:border-slate-900 text-sm font-sans text-slate-900 outline-none transition-all"
+                    />
+                  </div>
+
+                  {authMode === 'signup' && (
+                    <div>
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
+                        Confirm Password
+                      </label>
+                      <input
+                        type="password"
+                        required
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        placeholder="••••••••"
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:border-slate-900 text-sm font-sans text-slate-900 outline-none transition-all"
+                      />
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full px-5 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-sans font-semibold shadow-sm disabled:opacity-50 transition-all flex items-center justify-center space-x-2"
+                  >
+                    <span>{loading ? 'Validating...' : authMode === 'signup' ? 'Create Account' : 'Sign In'}</span>
+                    {!loading && <ArrowRight className="w-4 h-4" />}
+                  </button>
+                </form>
+
+                <p className="text-center text-[11px] text-slate-400 font-sans">
+                  {authMode === 'login' ? (
+                    <>Don't have an account?{' '}<button type="button" onClick={() => { setAuthMode('signup'); setError(null); }} className="text-slate-700 hover:text-slate-950 font-semibold underline underline-offset-2">Register here</button></>
+                  ) : (
+                    <>Already registered?{' '}<button type="button" onClick={() => { setAuthMode('login'); setError(null); }} className="text-slate-700 hover:text-slate-950 font-semibold underline underline-offset-2">Sign in</button></>
+                  )}
+                </p>
+              </div>
             </div>
           </div>
 
           {/* SIGNATURE KPI SUMMARY STRIP */}
-          <div className="mt-12 rounded-xl bg-white border border-slate-200 p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6 shadow-subtle">
+          <div className="mt-14 rounded-xl bg-white border border-slate-200 p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6 shadow-subtle">
             <div className="pl-3 border-l-2 border-slate-900 space-y-0.5">
               <div className="font-mono text-3xl sm:text-4xl font-bold text-slate-950 tabular-nums">
                 350
@@ -567,124 +684,30 @@ export const LandingPage: React.FC<LandingPageProps> = () => {
           </div>
         </section>
 
-        {/* SECTION 4: INLINE AUTHENTICATION PORTAL */}
-        <section id="auth-section" className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-xl border border-slate-300 bg-white p-6 sm:p-8 shadow-card space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
-              <div>
-                <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold">
-                  Investigator Access
-                </div>
-                <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 mt-0.5">
-                  {authMode === 'signup' ? 'Create Investigator Profile' : 'Sign In to SearchSea'}
-                </h2>
-              </div>
-
-              <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded text-xs font-mono">
-                <button
-                  type="button"
-                  onClick={() => { setAuthMode('login'); setError(null); }}
-                  className={`px-3 py-1 rounded font-medium transition-all ${
-                    authMode === 'login'
-                      ? 'bg-white text-slate-950 shadow-subtle font-semibold'
-                      : 'text-slate-600 hover:text-slate-950'
-                  }`}
-                >
-                  Sign In
-                </button>
-                <button
-                  type="button"
-                  onClick={() => { setAuthMode('signup'); setError(null); }}
-                  className={`px-3 py-1 rounded font-medium transition-all ${
-                    authMode === 'signup'
-                      ? 'bg-white text-slate-950 shadow-subtle font-semibold'
-                      : 'text-slate-600 hover:text-slate-950'
-                  }`}
-                >
-                  Register
-                </button>
-              </div>
-            </div>
-
-            {error && (
-              <div className="p-3.5 rounded bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start space-x-2">
-                <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-                <span>{error}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleAuthSubmit} className="space-y-4">
-              {authMode === 'signup' && (
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
-                    Full Name / Title
-                  </label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Dr. Eleanor Vance"
-                    className="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:border-slate-900 text-xs font-sans text-slate-900 outline-none transition-all"
-                  />
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
-                    Institutional Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="researcher@oxford.ac.uk"
-                    className="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:border-slate-900 text-xs font-sans text-slate-900 outline-none transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
-                    Password {authMode === 'signup' && '(min. 8 chars)'}
-                  </label>
-                  <input
-                    type="password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="••••••••"
-                    className="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:border-slate-900 text-xs font-sans text-slate-900 outline-none transition-all"
-                  />
-                </div>
-              </div>
-
-              {authMode === 'signup' && (
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-semibold mb-1">
-                    Confirm Password
-                  </label>
-                  <input
-                    type="password"
-                    required
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    placeholder="••••••••"
-                    className="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:border-slate-900 text-xs font-sans text-slate-900 outline-none transition-all"
-                  />
-                </div>
-              )}
-
-              <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full sm:w-auto px-6 py-2.5 rounded bg-slate-900 hover:bg-slate-800 text-white text-xs font-sans font-semibold shadow-sm disabled:opacity-50 transition-all"
-                >
-                  {loading ? 'Validating...' : authMode === 'signup' ? 'Create Investigator Account' : 'Sign In to Workspace'}
-                </button>
-              </div>
-            </form>
+        {/* SECTION 4: CTA BANNER — Auth is already inline in hero */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-950">
+            Ready to automate your empirical workflow?
+          </h2>
+          <p className="text-sm text-slate-600 font-sans max-w-2xl mx-auto">
+            Create your free investigator account and start running statistically rigorous analyses in minutes — no SPSS license or manual wrangling required.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+            <button
+              onClick={() => { scrollToAuth('signup'); }}
+              className="inline-flex items-center space-x-2 px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-sans font-semibold shadow-sm transition-all"
+            >
+              <UserPlus className="w-4 h-4 text-slate-300" />
+              <span>Create Free Account</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => { scrollToAuth('login'); }}
+              className="inline-flex items-center space-x-2 px-5 py-3 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-900 text-sm font-sans font-medium transition-all"
+            >
+              <LogIn className="w-4 h-4 text-slate-600" />
+              <span>Sign In</span>
+            </button>
           </div>
         </section>
       </main>
